@@ -8,6 +8,8 @@ import AddProducts from './pages/AddProducts';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -33,8 +35,20 @@ const router = createBrowserRouter([
         element: <ProductDetail />,
       },
       {
-        path: '/add/',
-        element: <AddProducts />,
+        path: '/cart',
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: '/add',
+        element: (
+          <ProtectedRoute requireAdmin>
+            <AddProducts />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllProducts } from '../api/product';
-import ProductCard from '../components/ProductCard';
 import SwiperSlider from '../components/SwiperSlider';
 import { useProducts } from '../hooks/products';
 

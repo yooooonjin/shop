@@ -8,3 +8,6 @@ body {
   font-family: 'Gelasio', 'Noto Sans KR';
   margin: auto;
 }
+pre {
+  font-family: 'Noto Sans KR';
+}

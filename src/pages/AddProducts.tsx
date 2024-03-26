@@ -51,13 +51,14 @@ export default function AddProducts() {
     if (file) {
       const result = await uploadImage(file);
       await addNewProduct(product, result.data.url);
+      alert('제품이 추가되었습니다.');
       setProduct(initalProduct);
       setFile(null);
     }
   };
 
   return (
-    <section className='max-w-screen-md m-auto mt-[100px]'>
+    <section className='max-w-screen-md m-auto mt-[100px] mb-10'>
       <h1 className='text-lg font-bold text-center mb-5'>새로운 제품 등록</h1>
       <form onSubmit={handleSubmit}>
         <div className='mb-5'>
